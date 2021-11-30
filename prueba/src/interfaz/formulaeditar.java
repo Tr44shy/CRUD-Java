@@ -210,10 +210,20 @@ public class formulaeditar extends JFrame {
 			
 			String SQL2 ="Select Nusuario from registros2 where Nusuario ='"+Usuario+"' "; 
 			
+			String SQL3 ="Select ID from registros2 where ID = '"+ID+"' ";
+			
 			Statement stm = conexion.createStatement();
 			ResultSet rs = stm.executeQuery(SQL2);
+			ResultSet rs2 = stm.executeQuery(SQL2);
 			
-			if(rs.next()) {
+			if(rs2.next()) {
+				stm.executeUpdate(SQL);
+				JOptionPane.showMessageDialog(null, "Registro editado!");
+				formula2 ventana1 = new formula2();
+				ventana1.setVisible(true);
+				dispose();
+			}
+			else if(rs.next()) {
 				resultado = 1;
 				if(resultado==1) {
 					JOptionPane.showMessageDialog(null, "Nombre de usuario en uso");
