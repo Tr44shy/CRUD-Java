@@ -214,7 +214,7 @@ public class formulaeditar extends JFrame {
 			
 			Statement stm = conexion.createStatement();
 			ResultSet rs = stm.executeQuery(SQL2);
-			ResultSet rs2 = stm.executeQuery(SQL2);
+			ResultSet rs2 = stm.executeQuery(SQL3);
 			
 			if(rs2.next()) {
 				stm.executeUpdate(SQL);
